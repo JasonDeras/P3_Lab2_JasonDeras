@@ -1,5 +1,6 @@
 #include<iostream>
 #include <cstdlib>
+
 #ifndef MATRIZ_CPP
 #define MATRIZ_CPP
 
@@ -11,7 +12,8 @@ class Matriz{
 		
 		int ancho;
 		int alto;
-		int **matriz;
+		int **matriz=NULL;
+		
 	protected:
 		
 	public:
@@ -48,53 +50,34 @@ class Matriz{
 			}//Fin del primer for	
 		}//Constructor sobrecargado
 		
-		Matriz(int l,int a){
-			longitud=l;
-			anchura=a;
-		}
+		void setAncho(int ancho){
+			this->ancho=ancho;
+		}//Metodo set del ancho de la matriz
 		
-		void setLongitud(int longitud){
-			
-			if(longitud>0&&longitud<20){
-				this->longitud=longitud;
-			}//Fin del if
-			
-		}//Set de la longitud
-		
-		void setAnchura(int anchura){
-			
-			if(anchura>0&&anchura<20){
-				this->anchura=anchura;
-			}//Fin del if
-			
-		}//set de la anchura
+		void setAlto(int alto){
+			this->alto=alto;
+		}//Metodo set del alto de la matriz
 	
-		int getAnchura(){
-			return anchura;
-		}//get de la anchura
+		int getAncho(){
+			return ancho;
+		}//Metodo get del ancho de la matriz
 		
-		int getLongitud(){
-			return longitud;			
-		}//get de la longitud
+		int getAtlo(){
+			return alto;			
+		}//Metodo get del alto de la matriz
 		
-		int area(){
-			return anchura*longitud;
-		}//metodo del area del rectangulo
+		void setMatriz(int**matriz){
+			this->matriz=matriz;
+		}//Metodo set de la matriz
 		
-		int perimetro(){
-			return (anchura*2)+(longitud*2);
-		}//Metodo del perimetro del rectangulo
+		int** getMatriz(){
+			return matriz;
+		}//Metodo get de la matriz
 		
-		void print(){
-			cout<<"Longitud:"<<longitud<<
-			" anchura: "<<anchura<<
-			" Area: "<<area()<<
-			" perimetro: "<<perimetro()<<endl;
-		}//Fin del metodo to string
 		
-		~Rectangulo(){
+		~Matriz(){
 			
-		}
+		}//Destructor de la clase matriz
 };
 
 #endif
