@@ -85,7 +85,7 @@ class Matriz{
 			
 			if(ancho==ancho2&&alto==alto2){
 				for(int i=0;i<alto;i++){
-					for(int j=0;j<ancho;i++){
+					for(int j=0;j<ancho;j++){
 						matriz[i][j]=matriz[i][j]+m->getMatriz()[i][j];
 					}
 				}
@@ -101,11 +101,11 @@ class Matriz{
 			
 			int ancho2=m->getAncho();
 			int alto2=m->getAtlo();
-			int size=alto¡*ancho;
+			int size=alto*ancho;
 			
 			if(ancho==ancho2&&alto==alto2){
 				for(int i=0;i<alto;i++){
-					for(int j=0;j<ancho;i++){
+					for(int j=0;j<ancho;j++){
 						matriz[i][j]=matriz[i][j]-m->getMatriz()[i][j];
 					}
 				}
@@ -117,12 +117,13 @@ class Matriz{
 		}//Fin del metodo que retorna la resta de las matrices
 		
 		void Multiplicacion(int escalar){
+			int size=ancho*alto;
 			for(int i=0;i<ancho;i++){
 				for(int j=0;j<alto;i++){
 					matriz[i][j]=matriz[i][j]*escalar;
 				}
 			}
-			 //printMatriz(matriz,this->ancho,this-> altura);
+			printMatriz2(matriz,size);
 		}//Fin del metodo que retorna la multiplicacion de las matrices
 		
 		void printMatriz2(int** matriz,int size){

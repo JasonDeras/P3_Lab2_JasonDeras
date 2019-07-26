@@ -67,8 +67,7 @@ void printMatriz2(Matriz*,int fila,int columna);
 								cout<<"Matriz creada de las dimensiones creadas"<<endl;
 								printMatriz2(m2,filas,cols);
 								cout<<"\n\n\n";
-								m->suma(m2);
-								
+								cout<<"Matriz con la suma\n\n";
 								if(m->suma(m2)){
 									lista.push_back("Suma: esitoso");
 								}else {
@@ -82,11 +81,21 @@ void printMatriz2(Matriz*,int fila,int columna);
 								cout<<"Matriz creada automaticamente"<<endl;
 								printMatriz(m,5);
 								cout<<"\n\n\n";
-								cout<<"Ingrese la anchura de la matriz a sumar: ";
+								cout<<"Ingrese la anchura de la matriz a resta: ";
 								cin>>filas;
-								cout<<"Ingrese la columnas de la matriz a sumar: ";
+								cout<<"Ingrese la columnas de la matriz a resta: ";
 								cin>>cols;
 								m2=new Matriz(filas,cols);
+								cout<<"\n\n\n";
+								cout<<"Matriz con la resta\n\n";
+								
+								cout<<"Matriz con la resta\n\n";
+								if(m->suma(m2)){
+									lista.push_back("Resta: esitoso");
+								}else {
+									lista.push_back("Resta: fallido");
+								}
+								
 								cout<<"\n\n\n";
 								cout<<"Matriz creada de las dimensiones creadas"<<endl;
 								printMatriz2(m2,filas,cols);
@@ -94,12 +103,14 @@ void printMatriz2(Matriz*,int fila,int columna);
 							break;
 							
 							case 3:
-								cout<<"Matriz creada automaticamente"<<endl;
-								printMatriz(m,5);
+							cout<<"Matriz creada automaticamente"<<endl;
+								printMatriz2(m2,filas,cols);
 								cout<<"\n\n\n";
 								cout<<"Ingrese el numero de multiplicacion: ";
 								cin>>escalar;
 								cout<<"\n\n\n";
+								m->Multiplicacion(escalar);
+								lista.push_back("Multiplicacion: esitoso");
 							break;
 							
 							case 4:
@@ -161,6 +172,12 @@ void printMatriz2(Matriz*,int fila,int columna);
 								cout<<"\n\n\n";
 								cout<<"Matriz creada de las dimensiones creadas"<<endl;
 								printMatriz2(m2,filas,cols);
+								cout<<"Matriz con la suma\n\n";
+								if(m->suma(m2)){
+									lista.push_back("Suma: esitoso");
+								}else {
+									lista.push_back("Suma: fallido");
+								}
 								cout<<"\n\n\n";
 							break;
 							
@@ -176,6 +193,12 @@ void printMatriz2(Matriz*,int fila,int columna);
 								cout<<"Matriz creada de las dimensiones creadas"<<endl;
 								printMatriz2(m2,filas,cols);
 								cout<<"\n\n\n";
+									cout<<"Matriz con la suma\n\n";
+								if(m->resta(m2)){
+									lista.push_back("Resta: esitoso");
+								}else {
+									lista.push_back("Resta: fallido");
+								}
 							break;
 							
 							case 3:
@@ -185,6 +208,8 @@ void printMatriz2(Matriz*,int fila,int columna);
 								cout<<"Ingrese el numero de multiplicacion: ";
 								cin>>escalar;
 								cout<<"\n\n\n";
+								m2->Multiplicacion(escalar);
+								lista2.push_back("Multiplicacion: esitoso");
 							break;
 							
 							case 4:
