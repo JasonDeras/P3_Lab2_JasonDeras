@@ -11,14 +11,13 @@ class Matriz{
 		
 		int ancho;
 		int alto;
-		
+		int **matriz;
 	protected:
 		
 	public:
 		
 		Matriz(){
 			
-			int **matriz;
 			matriz=new int*[5];
          	for(int i=0;i<5;i++){
 				matriz[i]=new int [5];
@@ -32,9 +31,21 @@ class Matriz{
 					
 		}//Fin del constructor simple
 		
-		Matriz(int valor){
-			longitud=valor;
-			anchura=valor;
+		Matriz(int ancho,int alto){
+			
+			this-> ancho=ancho;
+		 	this->alto=alto;
+			matriz=new int*[ancho];
+			
+         	for(int i=0;i<ancho;i++){
+				matriz[i]=new int [alto];
+			}//Llenado de la matriz de puntero
+				
+			for(int i=0;i<ancho;i++){
+				for(int j=0;j<alto;j++){
+					matriz[i][j] = (1+rand()%50);
+				}//Fin del segundo for
+			}//Fin del primer for	
 		}//Constructor sobrecargado
 		
 		Matriz(int l,int a){
