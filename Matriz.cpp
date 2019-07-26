@@ -19,6 +19,8 @@ class Matriz{
 	public:
 		
 		Matriz(){
+			this-> ancho = 5;
+			this-> alto = 5;
 			
 			matriz=new int*[5];
          	for(int i=0;i<5;i++){
@@ -74,6 +76,71 @@ class Matriz{
 			return matriz;
 		}//Metodo get de la matriz
 		
+		bool suma(Matriz *m){
+			
+			bool res;
+			
+			int ancho2=m->getAncho();
+			int alto2=m->getAtlo();
+			
+			if(ancho==ancho2&&alto==alto2){
+				for(int i=0;i<alto;i++){
+					for(int j=0;j<ancho;i++){
+						matriz[i][j]=matriz[i][j]+m->getMatriz()[i][j];
+					}
+				}
+				printMatriz2(matriz,5);
+				res=true;
+			}else {
+				res=false;
+			}
+			return res;
+		}//Fin del metodo que retorna la suma de las matrices
+		
+		bool resta(Matriz *m){
+			
+			int ancho2=m->getAncho();
+			int alto2=m->getAtlo();
+			
+			if(ancho==ancho2&&alto==alto2){
+				for(int i=0;i<ancho;i++){
+					for(int j=0;j<alto;i++){
+						matriz[i][j]=matriz[i][j]-m->getMatriz()[i][j];
+					}
+				}
+				printMatriz2(matriz,5);
+				return true;
+			}else {
+				return false;
+			}//Fin de la validacion de la resta de la matrices
+		}//Fin del metodo que retorna la resta de las matrices
+		
+		void Multiplicacion(int escalar){
+			for(int i=0;i<ancho;i++){
+				for(int j=0;j<alto;i++){
+					matriz[i][j]=matriz[i][j]*escalar;
+				}
+			}
+			 //printMatriz(matriz,this->ancho,this-> altura);
+		}//Fin del metodo que retorna la multiplicacion de las matrices
+		
+		void printMatriz2(int** matriz,int size){
+    		for(int i=0;i<size;i++){
+        		for(int j=0;j<size;j++){
+        			cout<<"["<<matriz[i][j]<<"]";
+				}//Fin del for de impresion
+				cout<<"\n";
+    		}//Fin del for de impresion
+		}//Fin del metodo para imprimir la matriz
+		
+		void printMatriz(int** matriz,int ancho,int altura){
+    		for(int i=0;i<ancho;i++){
+        		for(int j=0;j<altura;j++){
+        			cout<<"["<<matriz[i][j]<<"]";
+				}//Fin del for de impresion
+				cout<<"\n";
+    		}//Fin del for de impresion
+		}//Fin del metodo para imprimir la matriz
 		
 		~Matriz(){
 			
