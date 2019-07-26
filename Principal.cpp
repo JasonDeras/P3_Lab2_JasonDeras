@@ -133,7 +133,7 @@ void printMatriz2(Matriz*,int fila,int columna);
 					cin>>filas;
 					cout<<"Ingrese la columnas de la matriz: ";
 					cin>>cols;
-					m2=new Matriz(filas,cols);
+					m=new Matriz(filas,cols);
 					r2=1;
 						
 					while(r2==1){
@@ -153,15 +153,34 @@ void printMatriz2(Matriz*,int fila,int columna);
 							case 1:
 								cout<<"Matriz creada"<<endl;
 								printMatriz2(m2,filas,cols);
+								cout<<"Ingrese la anchura de la matriz a sumar: ";
+								cin>>filas;
+								cout<<"Ingrese la columnas de la matriz a sumar: ";
+								cin>>cols;
+								m2=new Matriz(filas,cols);
+								cout<<"\n\n\n";
+								cout<<"Matriz creada de las dimensiones creadas"<<endl;
+								printMatriz2(m2,filas,cols);
+								cout<<"\n\n\n";
 							break;
 							
 							case 2:
-								
+								cout<<"Matriz creada"<<endl;
+								printMatriz2(m2,filas,cols);
+								cout<<"Ingrese la anchura de la matriz a restar: ";
+								cin>>filas;
+								cout<<"Ingrese la columnas de la matriz a restar: ";
+								cin>>cols;
+								m2=new Matriz(filas,cols);
+								cout<<"\n\n\n";
+								cout<<"Matriz creada de las dimensiones creadas"<<endl;
+								printMatriz2(m2,filas,cols);
+								cout<<"\n\n\n";
 							break;
 							
 							case 3:
 								cout<<"Matriz creada automaticamente"<<endl;
-								//printMatriz(m2,filas,cols);
+								printMatriz2(m2,filas,cols);
 								cout<<"\n\n\n";
 								cout<<"Ingrese el numero de multiplicacion: ";
 								cin>>escalar;
@@ -169,7 +188,6 @@ void printMatriz2(Matriz*,int fila,int columna);
 							break;
 							
 							case 4:
-								cout<<"Bitacora"<<endl;
 								cout<<"Bitacora"<<endl;
 								for(int i=0;i<lista2.size();i++){
 									cout<<lista2[i]<<endl;

@@ -101,14 +101,15 @@ class Matriz{
 			
 			int ancho2=m->getAncho();
 			int alto2=m->getAtlo();
+			int size=alto¡*ancho;
 			
 			if(ancho==ancho2&&alto==alto2){
-				for(int i=0;i<ancho;i++){
-					for(int j=0;j<alto;i++){
+				for(int i=0;i<alto;i++){
+					for(int j=0;j<ancho;i++){
 						matriz[i][j]=matriz[i][j]-m->getMatriz()[i][j];
 					}
 				}
-				printMatriz2(matriz,5);
+				printMatriz2(matriz,size);
 				return true;
 			}else {
 				return false;
@@ -127,15 +128,6 @@ class Matriz{
 		void printMatriz2(int** matriz,int size){
     		for(int i=0;i<size;i++){
         		for(int j=0;j<size;j++){
-        			cout<<"["<<matriz[i][j]<<"]";
-				}//Fin del for de impresion
-				cout<<"\n";
-    		}//Fin del for de impresion
-		}//Fin del metodo para imprimir la matriz
-		
-		void printMatriz(int** matriz,int ancho,int altura){
-    		for(int i=0;i<ancho;i++){
-        		for(int j=0;j<altura;j++){
         			cout<<"["<<matriz[i][j]<<"]";
 				}//Fin del for de impresion
 				cout<<"\n";
